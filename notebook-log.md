@@ -17,4 +17,12 @@ command line: t_coffee -in=crustacea.txt Mpcma_msa Mmafft_msa Mclustalw_msa Mdia
 
 Of the 44 paralogs inserted, 5 of them exhibited average cost value, which shows that it does not align well as the other paralogs (Dmag CAH5,7,CARP1,Eaff CAH3,6). I need to decide whether I want to pull them out of my data. Saved the alignment data as "crustacea align.txt" and visualized on UGENE. Interestingly, it has aligned much less sequences compared to the MUSCLE algorithm, which is favorable. The MUSCLE software aligned many unconserved lines that made it really hard to manually edit. 
 
+3/14:
+found papers regarding to CA domains --- pulled paralogs lacking CAH domains. Especially the GSEH, ELH, and NNGH domains. These include  LPol_5,14,16,17 D_Mag_2,8,CARP3 TCal_CAH5 DMel_CAH4,10,11,12 MSex_CAH4,9. 
+
+3/15: 
+Mined European Centipede SMar from Ensembl Metazoa ---- Assembly from Chipman AD. 2013 w paper (https://doi.org/10.1371/journal.pbio.1002005)----- a rigid rejection limit was taken at an E value of E^-5. BLASTed against Drosophila paralogs (DMel_1 to DMel_CARPb)----- Mined  15 paralogs, in which 9 sequences had 200+, indicating a possible usability. ---- Confirmed all paralogs by BLASTing them against C.elegans and F.candida for confirmation.
+
+3/17:
+Tried to rescue some sequences from well annotated species that seem to be missing exons. Dmel_2,3,4. From JBrowse, it seems like these CAHs are do not transcribe certain conserved domains, unless possible annotation errors. I decide to keep CAH2, but tossed CAH3,4.
 
