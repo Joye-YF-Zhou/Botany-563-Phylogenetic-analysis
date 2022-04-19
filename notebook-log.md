@@ -36,3 +36,8 @@ Ran MUSCLE with the new sequences. on ebi.ac.uk web server. output format:FASTA.
 Ran IQ-TREE: local optima approximated through stochastic, hill climbing NNI. Each move is randomly tested and the move is accepted if it increases the tree likelihood. In order to escape from being stuck in a single optima, stochastic NNI will radically perturb the tree to increase the chance of escaping. This method is good since it offers the user model and parameter choice. I, howver, think that Mr.Bayes might be better...
 
 settings: ran "20species-edited" in protein. Subs model: GTR with Gamma rate and 4 #rate categories. Bootstrap --- ultrafast w 1000 iterations and a minimum correlation coefficient of 0.99. 1000 replicates was utilized. Perturbation strength of 0.5 and stopping rule of 100 is chosen. 
+
+4/17:
+Edited sequences by removing certain introns that should have being cleaved out during sequencing: DMag_5, SMar_CAH3, LPol_CAH7
+
+Pulled sequences: Eaff_CAH3, Eaff_CAH11
