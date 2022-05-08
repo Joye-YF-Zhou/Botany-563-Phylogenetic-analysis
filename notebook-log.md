@@ -41,3 +41,39 @@ settings: ran "20species-edited" in protein. Subs model: GTR with Gamma rate and
 Edited sequences by removing certain introns that should have being cleaved out during sequencing: DMag_5, SMar_CAH3, LPol_CAH7
 
 Pulled sequences: Eaff_CAH3, Eaff_CAH11
+
+4/19:
+Analysis on CA MUSCLE alignment and IQ-TREE phylogeny made ---- Very conserved CARP formed an outgroup. However, due to the overall low bootstrap value, the CARP will be considered seperately and a phylogeny by itself will be built.
+
+4/23:
+Due to the low conservation and high noise, IQ-TREE is re-ran with AA sequences. New mixture aa model (EX2) investgated. It weighs the probability of substitutions between AAs via its codon and functional similarity. Therefore, it could account for the complex protein evoution.
+
+Tree ran with non-CARP alpha CA under Ultrafast botstrap w 1000 btstrap alignments and 1000 MX iterations. the minimum correlation coefficient is calculated as 0.99. SH-aLRT branch test ---- increases the bootstrap confidence and efficiency--- is implemented w 1000 replicates. Perturbation strength is 0.5 w stopping rule of 100 dailed iterations. 
+
+Tree was much better, but branch support fairly bland. Alignment needs improvement.
+
+4/25:
+Manually aligned the Cysteine infront of teh QSPID/N domain. Extremely hard and likely incorrect. Due to teh time constraint and poor conservation, I xplored UGENE's Gap cleaving mechanism. I cleaved out all columns where less than 85% is filled. 
+
+IQ-TREE is subsequently ran with that alignment with the exact same setting as 4/23. The tree showed a much higher botstrap suuport, but still ds not fully replicate the findings of past papers, which I have hypothesized for it to replicate.
+
+4/28:
+The IQ-TREE phylogeny of the cleaved alignment is manually beautified with highlighters. 
+
+Tardigrade sequence is mined from NCBI to offer a new outgroup choice
+
+a phylogeny is ran with the CARP sequences under IQ-TREE. The user choice is the exact same as 4/23. Surprisingly low bootstrap support is demonstrated. Surprising as CARPs are much ore conserved than non CARP alha CA sequences. 
+
+5/1:
+Bayesian inference usin MrBayes is considered for CARP. MrBayes uses MCMC algorithm to sample possible tree moves from the user-setted prior tree. This method assumes that each site evolution is time homogenous, which causes its inability to account for rapid evolving genes. However, the MCMC is extremely accurate when the data set is small. As the data size grow large, the MCMC creates a vast tree space and its inefficiency in traversing space causes it to be stuck in a low local maxima for many cases. However, this phylogenetic method is a good fit to CARP sequences since the sample size is small.
+
+A Bayesian tree is ran with UGENE. A poisson rate matrix with gamma rate of evolution is selected as prior. A MCMC chain length of 10000 and subsampling freq of 1000, burnin of 10, heated chain of 10, and seed f 27166 is selected.
+
+REsulting tree is horrendously bad, with most of the tree resulting as polytomies.
+
+A BAyesian tree of the same CARP dataset is ran with MABL online server (http://www.phylogeny.fr/index.cgi). A substituion model of possion dist. and evolution rate of Invariable + gamma is selected. MCMC of 200,000 generations and 200 generations per tree sampled is chosen. Burnin of 100 initial trees is implemented. 
+
+The resulting tree is far better than the initial UGENE tree. Its bootstrap value is considerably lower than the IQTREE phylogeny, but it has a larger amount of polytomy and shorter branch length. This will be included in the paper as an interesting side demonstration. 
+
+5/7:
+CARP phylogenies were highlighted manually. The paper was written.
